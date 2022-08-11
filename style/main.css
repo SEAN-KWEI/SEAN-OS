@@ -1,0 +1,69 @@
+html {
+    font-family: Aktiv Grotesk Ex;
+    font-style:regular;
+    font-weight: 600;
+    font-size: 12px;
+    height: 100%;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+    /* border: solid yellow 10px; */
+    height: 100%;
+    margin: 0;
+    background-image: linear-gradient(30deg, rgb(243 219 167), rgb(246 202 210));
+}
+
+.enterHolder {
+    left: 0px;
+    top: 0px;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    border-radius: 50%;
+    /* border: solid yellow 10px; */
+    /* height: 100%; */
+
+}
+
+.enterButton {
+    opacity: 0;
+    cursor:pointer;
+    transition: 1s cubic-bezier(0.9, 0.05, 0.17, 0.97);
+    /* border: solid green; */
+
+}
+
+/* loading bar */
+.loadHolder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: solid red 10px; */
+    height: 100%;
+    opacity: 1;
+}
+
+.loadbar {
+    /* border: solid green; */
+    transition: ease 3s;
+    width: 50%;
+}
+
+#fill {
+    clip-path: circle(100%);
+    animation-name: loadingFill;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-timing-function:cubic-bezier(0.89, 0.23, 0.05, 0.96);
+}
+
+@keyframes loadingFill{
+    0%      {clip-path: circle(10%  at -25%)};
+    20%     {clip-path: circle(30% at -25%)};
+    40%     {clip-path: circle(40% at -25%)};
+    100%     {clip-path: circle(70% at -25%)};
+}
